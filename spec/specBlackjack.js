@@ -1,15 +1,15 @@
 describe("Blackjack", function () {
-    var oneCard;
+    var blkjack;
 
     //This will be called before running each spec
     beforeEach(function () {
-        oneCard = new Deck();
+        blkjack = new BlackJackGame();
     });
 
-    describe("when throwing a random number from 0-52 in the the card's class, in this case, 32, the return should be ", function () {
+    describe("convertfunction should pull 'Value: 2 of Spades, Card#: 28'", function () {
         //spec for sum operation
-        it("the return should be", function () {
-            expect(oneCard.cards(32)).toEqual("32 Spade 6");
+        it("and return only the value 2", function () {
+            expect(blkjack.BlackJackObject.convertfunction("Value: 2 of Spades, Card#: 28")).toEqual("2");
         });
     });
 
