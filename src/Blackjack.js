@@ -1,6 +1,7 @@
  var card1;
  var card2;
  var cardSum = 0;
+ var continueGame = true;
 
  // var BlackJackGame = function () {
  //          var deck = new Deck();
@@ -53,17 +54,17 @@
          return card;
      },
      winOrLose: function (result) { // if/else
-
          if (result < 21) {
              console.log("hit again or stand");
-
          } else if (result == 21) {
              console.log("you win");
+             continueGame = false;
          } else if (result > 21) {
              console.log("you lose");
+             continueGame = false;
          }
 
-     }
+     },
 
 
  }
