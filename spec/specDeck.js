@@ -15,7 +15,7 @@ describe("Deck", function () {
 
     describe("when throwing a number greater than the amount of cards ", function () {
         //spec for sum operation
-        xit("the return should be an exception", function () {
+        it("the return should be an exception", function () {
 
             expect(oneCard.cards(92)).toThrow("Card doesn't exist anthony");
         });
