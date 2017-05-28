@@ -1,34 +1,43 @@
-class BlackJack extends Deck {
+ var card1;
+ var card2;
 
-    valueOfCsards() {
-        var deck = new Deck();
-        var card1 = deck.cards(Math.floor(Math.random() * 52 + 1));
-        var card2 = deck.cards(Math.floor(Math.random() * 52 + 1));
-        console.log(card1);
-        console.log("asdfasdfas");
-    }
+ var BlackJackGame = function () {
+     var deck = new Deck();
+     card1 =deck.cards(Math.floor(Math.random() * 52 + 1));
+     card2 = deck.cards(Math.floor(Math.random() * 52 + 1));
+
+ }
+
+ // var BlackJackObject = {
+ //     card1: deck.cards(Math.floor(Math.random() * 52 + 1));
+ // }
+
+ var convertfunction = function (card) {
+
+     if (card > 10) {
+         card = 10;
+     }
+  
+     console.log(card);
+    
+     return card;
+   
 
 
-    constructor(value, suit) {
-        super(value, suit);
-
-        valueOfCards();
-        console.log("Working");
-        dealer();
-    }
+ }
 
 
+ var getValue = function (card) {
+     convertfunction(card);
 
-    dealer() {
-        console.log("Work please!");
-    }
+     return card;
+ };
 
-}
+ var score = function () {
+     console.log(getValue(card1)+ " "+ getValue(card2));
+     return getValue(card1) + getValue(card2);
+ };
 
-var valueOfCards = function () {
-    //    var card1 = deck.cards(Math.floor(Math.random() * 52 + 1));
-    //    var card2 = deck.cards(Math.floor(Math.random() * 52 + 1));
-    //    console.log(card1);
-    var a = new BlackJack();
-    a.dealer();
-}
+
+ BlackJackGame();
+score();
