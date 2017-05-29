@@ -14,22 +14,24 @@ Player.prototype.PlayerObject = {
                 hand = [card1, card2];
 
                 this.score();
-                // alert("Game Started");
+                
                 break;
             default:
-//                console.log("Didn't work");
+               
                 break;
         }
         return hand;
     },
     score: function () { //tells score
         hand = this.cards();
-        display.innerHTML = "My Cards: "+hand;
+        //RIGHT HERE!
+
+        // display.innerHTML = "My Cards: "+hand;
         blackjackScore = BlackJackGame.prototype.BlackJackObject.score(hand);
 
     },
     resetHand: function () {
         hand = [];
-        display.innerHTML = "My Cards: "+hand;
+        display.innerHTML = "My Cards: " + hand;
     }
 }

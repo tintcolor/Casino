@@ -12,6 +12,7 @@ class Deck {
         // var oneCard = Math.floor(Math.random() * 52 + 1);
 
         //        for (var oneCard = 0; oneCard < 52; oneCard++) {
+        
         if (oneCard < 13) {
             //             console.log(oneCard + " Hearts " + oneCard % 13);
             if (oneCard % 13 > 10 || oneCard % 13 == 0) {
@@ -21,7 +22,7 @@ class Deck {
                 var suit = "Hearts";
                 return aceConverter(oneCard, suit);
             } else {
-                return "Value: " + oneCard % 13 + " of Hearts";
+                return "Value: " + oneCard % 13 + " of Hearts, " + "Card#: " + oneCard;
 
             }
 
@@ -34,7 +35,7 @@ class Deck {
                 var suit = "Diamonds";
                 return aceConverter(oneCard, suit);
             } else {
-                return "Value: " + oneCard % 13 + " of Diamonds";
+                return "Value: " + oneCard % 13 + " of Diamonds, " + "Card#: " + oneCard;
             }
 
         } else if (oneCard >= 26 && oneCard < 39) {
@@ -46,7 +47,7 @@ class Deck {
                 var suit = "Spades";
                 return aceConverter(oneCard, suit);
             } else
-                return "Value: " + oneCard % 13 + " of Spades";
+                return "Value: " + oneCard % 13 + " of Spades, " + "Card#: " + oneCard;
 
         } else if (oneCard >= 39 && oneCard < 52) {
             //             console.log(oneCard + " Clubs " + oneCard % 13);
@@ -57,7 +58,7 @@ class Deck {
                 var suit = "Clubs";
                 return aceConverter(oneCard, suit);
             } else
-                return "Value: " + oneCard % 13 + " of Clubs";
+                return "Value: " + oneCard % 13 + " of Clubs, " + "Card#: " + oneCard;
         } else {
              console.log(oneCard);
             throw "Card doesn't exist anthony";
@@ -73,15 +74,18 @@ var cardConverter = function (valueOfCard, suit) {
     let oldValueOfCard = valueOfCard;
     if (valueOfCard % 3 == 1) {
         valueOfCard = 10;
-
-        return "Value: " + valueOfCard + " King of " + suit;
+        //console.log("Value: " + valueOfCard + " King of " + suit + ", Card#: " + oldValueOfCard);
+        return "Value: " + valueOfCard + " King of " + suit + ", Card#: " + oldValueOfCard;
+        
     } else if (valueOfCard % 3 == 0) {
         valueOfCard = 10;
-        return "Value: " + valueOfCard + " Queen of " + suit ;
+       // console.log("Value: " + valueOfCard + " Queen of " + suit + ", Card#: " + oldValueOfCard);
+        return "Value: " + valueOfCard + " Queen of " + suit + ", Card#: " + oldValueOfCard;
 
     } else if (valueOfCard % 3 == 2) {
         valueOfCard = 10;
-        return "Value: " + valueOfCard + " Jack of " + suit;
+       // console.log("Value: " + valueOfCard + " Jack of " + suit + ", Card#: " + oldValueOfCard);
+        return "Value: " + valueOfCard + " Jack of " + suit + ", Card#: " + oldValueOfCard;
 
     }
 }

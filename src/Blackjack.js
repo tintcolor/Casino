@@ -5,9 +5,11 @@
  var continueGame = true;
  var isBlackjackRunning = false;
  var blackjackDisplay = document.getElementById("status");
- var dealerDisplay = document.getElementById("dealersCards");
+ //var dealerDisplay = document.getElementById("dealersCards");
  let blackjackScore = document.getElementById("score");
  let blackjackDealerScore = document.getElementById("dealersScore");
+
+ //var dealerDisplay = document.getElementById("dealersCardDisplay");
 
  var hand;
 
@@ -15,11 +17,6 @@
 
  BlackJackGame.prototype.BlackJackObject = {
 
-     setCard: function () {
-         var deck = new Deck();
-         card1 = deck.cards(Math.floor(Math.random() * 52));
-         card2 = deck.cards(Math.floor(Math.random() * 52));
-     },
      convertfunctionToNumber: function (card) {
          card = card.match(/\d+/)[0]; // "3"
          card = parseInt(card);
@@ -31,36 +28,19 @@
 
          this.hand = hand;
          if (continueGame) {
-             
+
              playerTotal = 0;
              for (var card of hand) {
-                 // console.log(card + " sum");
+
                  playerTotal += this.convertfunctionToNumber(card);
-                 //console.log(cardSum + " sum");
+                 CardDisplay.prototype.CardDisplayObject.cardDisplayer(card, 'display');
              }
              let blackjackScore = document.getElementById("score");
              blackjackScore.innerHTML = "Current Score: " + playerTotal;
              this.winOrLose(playerTotal);
          } else {
              this.dealerHand();
-//             dealerTotal = 0;
-//             for (var card of hand) {
-//                 // console.log(card + " sum");
-//                 dealerTotal += this.convertfunctionToNumber(card);
-//                 //console.log(cardSum + " sum");
-//             }
-//             if (dealerTotal <= playerTotal && dealerTotal < 22) {
-//                 while (dealerTotal <= playerTotal && dealerTotal < 22) {
-//                     this.hit();
-//                 }
-//
-//             } else {
-//                 console.log("called");
-//                 blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
-//
-//                 console.log(dealerTotal);
-//                 this.winOrLose(dealerTotal);
-//             }
+
          }
 
          return card;
@@ -83,11 +63,8 @@
                  console.log("hit again or stand");
                  blackjackDisplay.innerHTML = "Hit again or stand?";
              } else if (result == 21) {
-                 console.log("you win");
-
-
+                 //                 console.log("you win");
                  this.winningPot();
-
                  blackjackDisplay.innerHTML = "You Win!";
                  //                 this.resetGame();
                  isBlackjackRunning = false;
@@ -108,7 +85,7 @@
 
                  isBlackjackRunning = false;
              } else if (dealerTotal > 21) {
-                 console.log("you win");
+                 //                 console.log("you win");
                  this.winningPot();
 
                  blackjackDisplay.innerHTML = "You Win!";
@@ -134,6 +111,7 @@
 
          if (continueGame == false) {
              document.getElementById("start-blackjack").disabled = false;
+
              Player.prototype.PlayerObject.resetHand();
              Dealer.prototype.DealerObject.resetHand();
 
@@ -142,10 +120,12 @@
              blackjackScore.innerHTML = "Current Score: ";
 
              dealerTotal = 0;
-             //             let blackjackDealerScore = document.getElementById("dealersScore");
-             dealerDisplay.innerHTML = "Dealer's Cards: ";
 
-             blackjackDisplay.innerHTML = "";
+
+             //             let blackjackDealerScore = document.getElementById("dealersScore");
+             //dealerDisplay.innerHTML = "Dealer's Cards: ";
+
+             //blackjackDisplay.innerHTML = "";
              console.log(dealerTotal);
 
              continueGame = true;
@@ -157,30 +137,27 @@
      startGame: function () {
 
          Player.prototype.PlayerObject.cards("BlackJack");
-         // isBlackjackRunning = true;
-
          document.getElementById("start-blackjack").disabled = true;
          isBlackjackRunning = true;
-
 
      },
      hit: function () {
          if (isBlackjackRunning == true) {
-
              if (hand.length != 0) {
                  if (continueGame == true) {
                      newCard = this.getCard();
                      hand.push(newCard);
-                     display.innerHTML = "My Cards: " + hand;
+                     display.innerHTML = "My Cards: ";
                      //console.log(hand);
                      this.score(hand);
                      //isBlackjackRunning = false;
                  } else {
                      newCard = this.getCard();
                      hand.push(newCard);
-                     dealerDisplay.innerHTML = "Dealer's Cards: " + hand;
+                     dealerDisplay.innerHTML = "Dealer's Cards: ";
                      this.score(hand);
                      isBlackjackRunning = false;
+
                  }
              }
          }
@@ -213,25 +190,31 @@
          var losingPot = Money.prototype.MoneyObject.losingPot(this.startingBet());
          Money.prototype.MoneyObject.currentPot(losingPot);
      },
-     dealerHand:function(){
+     dealerHand: function () {
          dealerTotal = 0;
-             for (var card of hand) {
-                 // console.log(card + " sum");
-                 dealerTotal += this.convertfunctionToNumber(card);
-                 //console.log(cardSum + " sum");
-             }
-             if (dealerTotal <= playerTotal && dealerTotal < 22) {
-                 while (dealerTotal <= playerTotal && dealerTotal < 22) {
-                     this.hit();
-                 }
+         for (var card of hand) {
+             dealerTotal += this.convertfunctionToNumber(card);
+             CardDisplay.prototype.CardDisplayObject.cardDisplayer(card, 'dealersCardDisplay');
 
-             } else {
-                 console.log("called");
-                 blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
+         }
+         //dealerDisplay.innerHTML = "asdfasd ";
+         //document.getElementById("dealersCardDisplay").innerHTML += 'uyfj;kjv';
 
-                 console.log(dealerTotal);
-                 this.winOrLose(dealerTotal);
+         if (dealerTotal <= playerTotal && dealerTotal < 22) {
+             console.log("crap");
+             while (dealerTotal <= playerTotal && dealerTotal < 22) {
+                 
+                 this.hit();
+                 
              }
+
+         } else {
+          
+             blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
+
+       
+             this.winOrLose(dealerTotal);
+         }
      }
 
  }
