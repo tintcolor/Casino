@@ -5,7 +5,7 @@ class Deck {
     constructor(value, suit) {
         this.value = value;
         this.suit = suit;
-        // new Cat();
+
     }
 
     cards(oneCard) {
@@ -68,24 +68,21 @@ class Deck {
 
 }
 
-
-
-
 var cardConverter = function (valueOfCard, suit) {
 
     let oldValueOfCard = valueOfCard;
     if (valueOfCard % 3 == 1) {
         valueOfCard = 10;
-        
+
         return "Value: " + valueOfCard + " King of " + suit + ", Card#: " + oldValueOfCard;
     } else if (valueOfCard % 3 == 0) {
         valueOfCard = 10;
         return "Value: " + valueOfCard + " Queen of " + suit + ", Card#: " + oldValueOfCard;
-        // return valueOfCard + " Queen of " + suit;
+
     } else if (valueOfCard % 3 == 2) {
         valueOfCard = 10;
         return "Value: " + valueOfCard + " Jack of " + suit + ", Card#: " + oldValueOfCard;
-        //return valueOfCard + " Jack of " + suit;
+
     }
 }
 
@@ -94,27 +91,5 @@ var aceConverter = function (valueOfCard, suit) {
     valueOfCard = 11;
 
     return "Value: " + valueOfCard + " Ace of " + suit + ", Card#: " + oldValueOfCard;
-    //return valueOfCard + " Ace of " + suit;
+
 }
-
-
-
-//class BlackJack extends Deck {
-//
-//    constructor(value, suit) {
-//        super(value, suit);
-//        var deck = new Deck();
-//    }
-//
-//    dealer() {
-//
-//
-//    }
-//
-//
-//    //var card1 = deck.cards(Math.floor(Math.random() * 52 + 1));
-//    //var card2 = deck.cards(Math.floor(Math.random() * 52 + 1));
-//
-//
-//
-//}
