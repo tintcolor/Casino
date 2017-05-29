@@ -1,7 +1,11 @@
  var card1;
  var card2;
- var cardSum = 0;
+ var playerTotal = 0;
+ var dealerTotal = 0;
  var continueGame = true;
+ var blackjackDisplay = document.getElementById("status");
+
+ var hand;
 
  // var BlackJackGame = function () {
  //          var deck = new Deck();
@@ -27,22 +31,51 @@
      },
 
      score: function (hand) {
+
          //console.log(card1)
          //console.log(hand);
-         cardSum = 0;
-         for (var card of hand) {
-             console.log(card + " sum");
-             cardSum += this.convertfunctionToNumber(card);
-             //console.log(cardSum + " sum");
-         }
-         this.winOrLose(cardSum);
+         this.hand = hand;
 
-         console.log(cardSum + " sum of cards")
-         // card1 = this.convertfunction(card1);
-         // card2 = this.convertfunction(card2);
+
+
+         if (continueGame) {
+             playerTotal = 0;
+             for (var card of hand) {
+                 // console.log(card + " sum");
+                 playerTotal += this.convertfunctionToNumber(card);
+                 //console.log(cardSum + " sum");
+             }
+
+             let blackjackScore = document.getElementById("score");
+             blackjackScore.innerHTML = "Current Score: " + playerTotal;
+             this.winOrLose(playerTotal);
+         } else {
+             dealerTotal = 0;
+             console.log(playerTotal);
+             console.log(dealerTotal);
+
+
+             for (var card of hand) {
+                 // console.log(card + " sum");
+                 dealerTotal += this.convertfunctionToNumber(card);
+                 //console.log(cardSum + " sum");
+             }
+
+             console.log(playerTotal);
+             console.log(dealerTotal);
+             while (dealerTotal <= playerTotal && dealerTotal <= 21) {
+                 this.hit();
+                 let blackjackDealerScore = document.getElementById("dealerScore");
+                 blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
+             }
+             this.winOrLose(dealerTotal);
+         }
+
+
 
          return card;
      },
+
      getValue: function (card) {
          //convertfunction(card);
          return card;
@@ -54,49 +87,95 @@
          return card;
      },
      winOrLose: function (result) { // if/else
-         if (result < 21) {
-             console.log("hit again or stand");
-         } else if (result == 21) {
-             console.log("you win");
-             continueGame = false;
-         } else if (result > 21) {
-             console.log("you lose");
-             continueGame = false;
+
+         if (continueGame) {
+             if (result < 21) {
+                 console.log("hit again or stand");
+                 blackjackDisplay.innerHTML = "Hit again or stand?";
+             } else if (result == 21) {
+                 console.log("you win");
+                 blackjackDisplay.innerHTML = "You Win!";
+                 this.resetGame();
+                 continueGame = false;
+             } else if (result > 21) {
+                 console.log("you lose");
+                 blackjackDisplay.innerHTML = "You Lose!";
+                 this.resetGame();
+                 continueGame = false;
+             }
+         } else {
+//             console.log("I'm here");
+//              console.log(playerTotal+" plyaer");
+//             console.log(dealerTotal+" dealer");
+//             
+             
+             if (dealerTotal > playerTotal && dealerTotal <= 21) {
+                  blackjackDisplay.innerHTML = "Dealer Wins! You Lose!";
+                // console.log("Dealer Wins! You Lose!");
+                 this.resetGame();
+             } else if (dealerTotal > 21) {
+                 //console.log("you win");
+                 blackjackDisplay.innerHTML = "You Win!";
+                 this.resetGame();
+//                 continueGame = false;
+             } else if (dealerTotal == playerTotal) {
+                // console.log("Draw! Play again!");
+                 blackjackDisplay.innerHTML = "Draw! Play again!";
+                 this.resetGame();
+//                 continueGame = false;
+             }
+
          }
 
+
+
+
+
      },
+     resetGame: function () {
+         Player.prototype.PlayerObject.resetHand();
+     },
+     startGame: function () {
+         Player.prototype.PlayerObject.cards("BlackJack");
+     },
+     hit: function () { //event has to do this 
+
+
+         if (hand.length != 0) {
+             if (continueGame) {
+                 newCard = this.getCard();
+                 hand.push(newCard);
+                 //console.log(hand);
+                 this.score(hand);
+                 // blackjackScore.innerHTML += hand;
+                 display.innerHTML = hand;
+             } else {
+                 newCard = this.getCard();
+                 hand.push(newCard);
+                 //console.log(hand);
+                 this.score(hand);
+                 // blackjackScore.innerHTML += hand;
+                 dealerDisplay.innerHTML = hand;
+             }
+
+         }
+
+         return hand;
+     },
+     stand: function () {
+
+
+         if (hand.length != 0) {
+
+             this.dealersTurn();
+         } else {
+
+         }
+     },
+     dealersTurn: function () {
+         continueGame = false;
+         Dealer.prototype.DealerObject.cards("BlackJack");
+     }
 
 
  }
-
- BlackJackGame.prototype.BlackJackObject.setCard();
- //BlackJackGame.prototype.BlackJackObject.getCard();
- //BlackJackGame.prototype.BlackJackObject.score();
-
-
- // var convertfunction = function (card) {
- //     if (card > 10) {
- //         card = 10;
- //     }
- //     console.log(card);
- //     return card;
- // }
-
-
- // var getValue = function (card) {
- //     //convertfunction(card);
- //
- //     return card;
- // };
-
- // var score = function () {
- //     console.log(getValue(card1) + " " + getValue(card2));
- //     return getValue(card1) + getValue(card2);
- // };
-
- //         console.log(BlackJackObject.getValue(card1) + " " + BlackJackObject.getValue(card2));
- //         return BlackJackObject.getValue(card1) + BlackJackObject.getValue(card2);
-
-
- // BlackJackGame();
- // score();

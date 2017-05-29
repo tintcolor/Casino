@@ -3,7 +3,7 @@
 
 <head>
     <title>Blackjack game</title>
-   
+
 
 </head>
 
@@ -13,22 +13,48 @@
 
     <section id="menu">
         <ul>
-            <li><button type="button" class="btn btn-primary" onclick="Player.prototype.PlayerObject.display()">New Game</button></li>
-            <li><button type="button" class="btn btn-primary" onclick="Player.prototype.PlayerObject.hit()">Hit</button></li>
 
+
+            <li><button type="button" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.startGame()">Play Blackjack</button></li>
+
+            <li><button type="button" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.hit()">Hit</button></li>
+
+            <li><button type="button" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.stand()">Stand</button></li>
+
+            <li><button type="button" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.changeDisplay()">again</button></li>
 
 
         </ul>
     </section>
     <section id="main">
-        <div id="display">Display</div>
+        <div id="display">My Cards: </div>
     </section>
 
+    <section id="main">
+        <span id="score">Current Score: </span>
+    </section>
+
+    <section id="main">
+        <div id="dealer">Dealer's Cards: </div>
+    </section>
+
+    <section id="main">
+        <span id="dealerScore">Dealer's Score: </span>
+    </section>
+
+    <section id="main">
+        <div id="status">Display</div>
+    </section>
+
+
+    <script src="src/Dealer.js"></script>
+    <script src="src/MathUtils.js"></script>
+    <script src="src/Cat.js"></script>
+    <script src="src/Deck.js"></script>
+    <script src="src/Blackjack.js"></script>
+    <script src="src/Player.js"></script>
+
+
 </body>
-<script src="src/MathUtils.js"></script>
-<script src="src/Cat.js"></script>
-<script src="src/Deck.js"></script>
-<script src="src/Blackjack.js"></script>
-<script src="src/Player.js"></script>
 
 </html>

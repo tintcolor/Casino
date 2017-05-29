@@ -73,13 +73,10 @@ class Deck {
 
 var cardConverter = function (valueOfCard, suit) {
 
-
-    //    console.log(valueOfCard);
-
     let oldValueOfCard = valueOfCard;
     if (valueOfCard % 3 == 1) {
         valueOfCard = 10;
-        //return "Value: "+oneCard % 13 + " of Hearts, "+ 
+        
         return "Value: " + valueOfCard + " King of " + suit + ", Card#: " + oldValueOfCard;
     } else if (valueOfCard % 3 == 0) {
         valueOfCard = 10;
