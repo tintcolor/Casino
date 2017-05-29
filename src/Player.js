@@ -17,7 +17,7 @@ Player.prototype.PlayerObject = {
                 // alert("Game Started");
                 break;
             default:
-                console.log("Didn't work");
+//                console.log("Didn't work");
                 break;
         }
         return hand;

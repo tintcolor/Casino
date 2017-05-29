@@ -21,7 +21,7 @@ class Deck {
                 var suit = "Hearts";
                 return aceConverter(oneCard, suit);
             } else {
-                return "Value: " + oneCard % 13 + " of Hearts, " + "Card#: " + oneCard;
+                return "Value: " + oneCard % 13 + " of Hearts";
 
             }
 
@@ -34,7 +34,7 @@ class Deck {
                 var suit = "Diamonds";
                 return aceConverter(oneCard, suit);
             } else {
-                return "Value: " + oneCard % 13 + " of Diamonds, " + "Card#: " + oneCard;
+                return "Value: " + oneCard % 13 + " of Diamonds";
             }
 
         } else if (oneCard >= 26 && oneCard < 39) {
@@ -46,7 +46,7 @@ class Deck {
                 var suit = "Spades";
                 return aceConverter(oneCard, suit);
             } else
-                return "Value: " + oneCard % 13 + " of Spades, " + "Card#: " + oneCard;
+                return "Value: " + oneCard % 13 + " of Spades";
 
         } else if (oneCard >= 39 && oneCard < 52) {
             //             console.log(oneCard + " Clubs " + oneCard % 13);
@@ -57,7 +57,7 @@ class Deck {
                 var suit = "Clubs";
                 return aceConverter(oneCard, suit);
             } else
-                return "Value: " + oneCard % 13 + " of Clubs, " + "Card#: " + oneCard;
+                return "Value: " + oneCard % 13 + " of Clubs";
         } else {
              console.log(oneCard);
             throw "Card doesn't exist anthony";
@@ -74,14 +74,14 @@ var cardConverter = function (valueOfCard, suit) {
     if (valueOfCard % 3 == 1) {
         valueOfCard = 10;
 
-        return "Value: " + valueOfCard + " King of " + suit + ", Card#: " + oldValueOfCard;
+        return "Value: " + valueOfCard + " King of " + suit;
     } else if (valueOfCard % 3 == 0) {
         valueOfCard = 10;
-        return "Value: " + valueOfCard + " Queen of " + suit + ", Card#: " + oldValueOfCard;
+        return "Value: " + valueOfCard + " Queen of " + suit ;
 
     } else if (valueOfCard % 3 == 2) {
         valueOfCard = 10;
-        return "Value: " + valueOfCard + " Jack of " + suit + ", Card#: " + oldValueOfCard;
+        return "Value: " + valueOfCard + " Jack of " + suit;
 
     }
 }
