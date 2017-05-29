@@ -70,6 +70,15 @@
                  isBlackjackRunning = false;
                  continueGame = false;
              } else if (result > 21) {
+
+
+               // var newHand = this.blackjackAceConversion();
+                 
+                 //this.score(newHand);
+
+
+
+
                  this.losingPot();
                  console.log("you lose");
                  blackjackDisplay.innerHTML = "You Lose!";
@@ -203,20 +212,42 @@
          if (dealerTotal <= playerTotal && dealerTotal < 22) {
              console.log("crap");
              while (dealerTotal <= playerTotal && dealerTotal < 22) {
-                 
+
                  this.hit();
-                 
+
              }
 
          } else {
-          
+
              blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
 
-       
+
              this.winOrLose(dealerTotal);
          }
+     },
+     blackjackAceConversion: function () {
+//
+//
+//         console.log(hand);
+//         if (hand.includes("Value: 11 Ace of Spades, Card#: 27")||hand.includes("Value: 11 Ace of Hearts, Card#: 1")||hand.includes("Value: 11 Ace of Clubs, Card#: 40")||hand.includes("Value: 11 Ace of Diamonds, Card#: 14")) {
+//             console.log("has ace");
+//             // value of 11 continue, if not, go back
+//             for (var i = 0; i < hand.length; i++) {
+//                 // look for all aces
+//                 if (hand[i].includes("Value: 11 ")) {
+//                     console.log(hand[i]);
+//                     hand[i]="11";
+//                     console.log(hand);
+//                     return hand;
+//                 }
+//             }
+//
+//         } else {
+//            this.winOrLose();
+//         }
+
      }
 
- }
 
+ }
  // BlackJackGame.prototype.BlackJackObject.startingBet();
