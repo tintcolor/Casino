@@ -1,9 +1,3 @@
-//Player = function () {};
-//
-//Player.prototype.cards = function () {
-//
-//}
-
 Player = function () {};
 
 var display = document.getElementById("display");
@@ -25,12 +19,7 @@ Player.prototype.PlayerObject = {
             default:
                 console.log("Didn't work");
                 break;
-
-
         }
-
-        // console.log(hand);
-
         return hand;
     },
     score: function () { //tells score
@@ -38,21 +27,8 @@ Player.prototype.PlayerObject = {
         display.innerHTML = hand;
         blackjackScore = BlackJackGame.prototype.BlackJackObject.score(hand);
 
-
-        // console.log(blackjackScore);
     },
     resetHand: function () {
         hand = [];
     }
-
-
-
-
 }
-
-
-
-//Player.prototype.PlayerObject.cards();
-//Player.prototype.PlayerObject.score();
-//Player.hit();
-//Player.score();

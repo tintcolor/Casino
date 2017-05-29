@@ -9,13 +9,6 @@
 
  var hand;
 
- // var BlackJackGame = function () {
- //          var deck = new Deck();
- //          card1 = deck.cards(Math.floor(Math.random() * 52 + 1));
- //          card2 = deck.cards(Math.floor(Math.random() * 52 + 1));
- //
- // }
-
  BlackJackGame = function () {};
 
  BlackJackGame.prototype.BlackJackObject = {
@@ -34,12 +27,7 @@
 
      score: function (hand) {
 
-         //console.log(card1)
-         //console.log(hand);
          this.hand = hand;
-
-
-
          if (continueGame) {
              playerTotal = 0;
              for (var card of hand) {
@@ -47,37 +35,23 @@
                  playerTotal += this.convertfunctionToNumber(card);
                  //console.log(cardSum + " sum");
              }
-
              let blackjackScore = document.getElementById("score");
              blackjackScore.innerHTML = "Current Score: " + playerTotal;
              this.winOrLose(playerTotal);
          } else {
              dealerTotal = 0;
-             console.log(playerTotal);
-             console.log(dealerTotal);
-
-
              for (var card of hand) {
                  // console.log(card + " sum");
                  dealerTotal += this.convertfunctionToNumber(card);
                  //console.log(cardSum + " sum");
              }
-
-             console.log(playerTotal);
-             console.log(dealerTotal);
              while (dealerTotal <= playerTotal && dealerTotal <= 21) {
                  this.hit();
-
              }
-
              let blackjackDealerScore = document.getElementById("dealersScore");
              blackjackDealerScore.innerHTML = "Dealer's Score: " + dealerTotal;
-
              this.winOrLose(dealerTotal);
          }
-
-
-
          return card;
      },
 
@@ -129,9 +103,6 @@
          }
 
 
-
-
-
      },
      resetGame: function () {
          Player.prototype.PlayerObject.resetHand();
@@ -166,7 +137,7 @@
                  dealerDisplay.innerHTML = hand;
                  this.score(hand);
                  // blackjackScore.innerHTML += hand;
-               
+
              }
 
          }

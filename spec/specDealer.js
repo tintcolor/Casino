@@ -1,15 +1,15 @@
-describe("Player", function () {
-    var player;
+describe("Dealer", function () {
+    var dealer;
 
     //This will be called before running each spec
     beforeEach(function () {
-        player = new Player();
+        dealer = new Dealer();
     });
 
-        describe("when player starts a game", function () {
+        describe("when dealer starts a game", function () {
             //spec for sum operation
             it("should have an array length of 2", function () {
-                expect(player.PlayerObject.cards("BlackJack").length).toEqual(2);
+                expect(dealer.DealerObject.cards("BlackJack").length).toEqual(2);
             });
         });
 });
