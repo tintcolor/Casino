@@ -105,16 +105,23 @@
 
      },
      resetGame: function () {
-         Player.prototype.PlayerObject.resetHand();
-         Dealer.prototype.DealerObject.resetHand();
+
+
+         if (isBlackjackRunning == true) {
+             Player.prototype.PlayerObject.resetHand();
+             Dealer.prototype.DealerObject.resetHand();
+             console.log("broke up");
+         }
+
      },
      startGame: function () {
 
          if (isBlackjackRunning == false) {
              Player.prototype.PlayerObject.cards("BlackJack");
-
+             isBlackjackRunning = true;
          } else {
              this.resetGame();
+
          }
 
      },
@@ -125,18 +132,18 @@
              if (continueGame) {
                  newCard = this.getCard();
                  hand.push(newCard);
-                 display.innerHTML = hand;
+                 display.innerHTML = "My Cards: "+hand;
                  //console.log(hand);
                  this.score(hand);
-                 // blackjackScore.innerHTML += hand;
+
 
              } else {
                  newCard = this.getCard();
                  hand.push(newCard);
                  //console.log(hand);
-                 dealerDisplay.innerHTML = hand;
+                 dealerDisplay.innerHTML = "Dealer's Cards: "+hand;
                  this.score(hand);
-                 // blackjackScore.innerHTML += hand;
+
 
              }
 
@@ -145,13 +152,8 @@
          return hand;
      },
      stand: function () {
-
-
          if (hand.length != 0) {
-
              this.dealersTurn();
-         } else {
-
          }
      },
      dealersTurn: function () {

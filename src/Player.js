@@ -24,11 +24,12 @@ Player.prototype.PlayerObject = {
     },
     score: function () { //tells score
         hand = this.cards();
-        display.innerHTML = hand;
+        display.innerHTML = "My Cards: "+hand;
         blackjackScore = BlackJackGame.prototype.BlackJackObject.score(hand);
 
     },
     resetHand: function () {
         hand = [];
+        //display.innerHTML = "My Cards: "+hand;
     }
 }

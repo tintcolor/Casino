@@ -28,7 +28,7 @@ Dealer.prototype.DealerObject = {
     },
     score: function () { //tells score
         hand = this.cards();
-        dealerDisplay.innerHTML = hand;
+        dealerDisplay.innerHTML = "Dealer's Cards: "+hand;
         blackjackScore = BlackJackGame.prototype.BlackJackObject.score(hand);
     },
     resetHand: function () {
