@@ -30,6 +30,6 @@ Player.prototype.PlayerObject = {
     },
     resetHand: function () {
         hand = [];
-        //display.innerHTML = "My Cards: "+hand;
+        display.innerHTML = "My Cards: "+hand;
     }
 }

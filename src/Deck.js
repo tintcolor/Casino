@@ -14,10 +14,10 @@ class Deck {
         //        for (var oneCard = 0; oneCard < 52; oneCard++) {
         if (oneCard < 13) {
             //             console.log(oneCard + " Hearts " + oneCard % 13);
-            if (oneCard % 13 > 10) {
+            if (oneCard % 13 > 10 || oneCard % 13 == 0) {
                 var suit = "Hearts";
                 return cardConverter(oneCard, suit);
-            } else if (oneCard % 13 == 0) {
+            } else if (oneCard % 13 == 1) {
                 var suit = "Hearts";
                 return aceConverter(oneCard, suit);
             } else {
@@ -27,10 +27,10 @@ class Deck {
 
         } else if (oneCard >= 13 && oneCard < 26) {
             //             console.log(oneCard + " Diamonds " + oneCard % 13);
-            if (oneCard % 13 > 10) {
+            if (oneCard % 13 > 10|| oneCard % 13 == 0) {
                 var suit = "Diamonds";
                 return cardConverter(oneCard, suit);
-            } else if (oneCard % 13 == 0) {
+            } else if (oneCard % 13 == 1) {
                 var suit = "Diamonds";
                 return aceConverter(oneCard, suit);
             } else {
@@ -39,10 +39,10 @@ class Deck {
 
         } else if (oneCard >= 26 && oneCard < 39) {
             //            console.log(oneCard + " Spade " + oneCard % 13);
-            if (oneCard % 13 > 10) {
+            if (oneCard % 13 > 10|| oneCard % 13 == 0) {
                 var suit = "Spades";
                 return cardConverter(oneCard, suit);
-            } else if (oneCard % 13 == 0) {
+            } else if (oneCard % 13 == 1) {
                 var suit = "Spades";
                 return aceConverter(oneCard, suit);
             } else
@@ -50,16 +50,16 @@ class Deck {
 
         } else if (oneCard >= 39 && oneCard < 52) {
             //             console.log(oneCard + " Clubs " + oneCard % 13);
-            if (oneCard % 13 > 10) {
+            if (oneCard % 13 > 10|| oneCard % 13 == 0) {
                 var suit = "Clubs";
                 return cardConverter(oneCard, suit);
-            } else if (oneCard % 13 == 0) {
+            } else if (oneCard % 13 == 1) {
                 var suit = "Clubs";
                 return aceConverter(oneCard, suit);
             } else
                 return "Value: " + oneCard % 13 + " of Clubs, " + "Card#: " + oneCard;
         } else {
-            // console.log(oneCard);
+             console.log(oneCard);
             throw "Card doesn't exist anthony";
         }
 

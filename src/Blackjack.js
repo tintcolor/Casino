@@ -6,6 +6,7 @@
  var isBlackjackRunning = false;
  var blackjackDisplay = document.getElementById("status");
  var dealerDisplay = document.getElementById("dealersCards");
+let blackjackScore = document.getElementById("score");
 
  var hand;
 
@@ -111,6 +112,8 @@
              Player.prototype.PlayerObject.resetHand();
              Dealer.prototype.DealerObject.resetHand();
              console.log("broke up");
+          
+             isBlackjackRunning = false;
          }
 
      },
@@ -125,14 +128,14 @@
          }
 
      },
-     hit: function () { //event has to do this 
+     hit: function () {
 
 
          if (hand.length != 0) {
              if (continueGame) {
                  newCard = this.getCard();
                  hand.push(newCard);
-                 display.innerHTML = "My Cards: "+hand;
+                 display.innerHTML = "My Cards: " + hand;
                  //console.log(hand);
                  this.score(hand);
 
@@ -141,7 +144,7 @@
                  newCard = this.getCard();
                  hand.push(newCard);
                  //console.log(hand);
-                 dealerDisplay.innerHTML = "Dealer's Cards: "+hand;
+                 dealerDisplay.innerHTML = "Dealer's Cards: " + hand;
                  this.score(hand);
 
 
