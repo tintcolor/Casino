@@ -1,8 +1,6 @@
-//Have a set amount of money, and everytime you win, it goes up 10 dollars, if you lose, it goes down
 var winnings = 0;
 var pot = 100;
 Money = function () {};
-
 
 Money.prototype.MoneyObject = {
 
@@ -18,11 +16,15 @@ Money.prototype.MoneyObject = {
     },
     currentPot: function (newPot) {
         let currentPotDisplay = document.getElementById("moneypot");
-        if (newPot == null) {
-            console.log("asdfsdf");
-            currentPotDisplay.innerHTML = "Amount of Money: 100";
-        } else {
-            currentPotDisplay.innerHTML = "Amount of Money: " + newPot;
+
+        if (newPot == null)
+            currentPotDisplay.innerHTML = "Current Winnings: $100";
+        else
+            currentPotDisplay.innerHTML = "Current Winnings: $" + newPot;
+
+       
+        if (newPot <= 0) {
+            window.setTimeout(this.getOut, 1000);
         }
     },
     losingPot: function (winnings) {
@@ -34,7 +36,10 @@ Money.prototype.MoneyObject = {
         potHolder = pot - parseInt(winnings)
         pot = potHolder;
         return potHolder;
+    },
+    getOut:function(){
+         alert("You have no more money, please leave the casino!");
+        window.location.replace("https://en.wikipedia.org/wiki/Problem_gambling");
     }
 }
-
 Money.prototype.MoneyObject.currentPot();

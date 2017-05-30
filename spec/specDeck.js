@@ -9,7 +9,7 @@ describe("Deck", function () {
     describe("when throwing a random number from 0-52 in the card's class, in this case, 32, the return should be ", function () {
         //spec for sum operation
         it("the number 32 as the deck order number, spade for the suit, and 6 for the value of the card ", function () {
-            expect(oneCard.cards(32)).toEqual("Value: 6 of Spades");
+            expect(oneCard.cards(32)).toEqual("Value: 6 of Spades, Card#: 32");
         });
     });
 
@@ -25,7 +25,7 @@ describe("Deck", function () {
         //spec for sum operation
         it("the return should be the value 10 as an Jack of Clubs", function () {
 
-            expect(oneCard.cards(50)).toEqual("Value: 10 Jack of Clubs");
+            expect(oneCard.cards(50)).toEqual("Value: 10 Jack of Clubs, Card#: 50");
         });
     });
     
@@ -33,7 +33,7 @@ describe("Deck", function () {
         //spec for sum operation
         it("the return should be the value 11 as an Ace of Hearts", function () {
 
-            expect(oneCard.cards(0)).toEqual("Value: 10 Queen of Hearts");
+            expect(oneCard.cards(0)).toEqual("Value: 10 Queen of Hearts, Card#: 0");
         });
     });
     
