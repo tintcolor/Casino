@@ -1,0 +1,87 @@
+body {
+    padding: 17px;
+}
+
+#moneypot {
+    text-align: center;
+    font-size: 38px;
+}
+
+#dealercardback{
+        height: auto;
+    
+    text-align: center;
+}
+#mycardback{
+        height: auto;
+    
+    text-align: center;
+}
+.dealers_cards {
+    text-align: center;
+    height: auto;
+}
+
+.dealerCardsTitle {
+    text-align: center;
+}
+
+#dealerPoints {
+    text-align: center;
+}
+
+.my_cards {
+    text-align: center;
+    height: auto;
+}
+
+.myCardsTitle {
+    text-align: center;
+}
+
+#currentscore {
+    text-align: center;
+}
+
+#status {
+    text-align: center;
+    font-size: 26px;
+}
+
+.btn {
+    text-decoration: underline;
+}
+
+.btn:hover {
+    /*    color:blue;*/
+}
+
+button[disabled=disabled],
+button:disabled {
+    color: cornflowerblue;
+    text-decoration: line-through;
+}
+
+#bet {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.cardpics {
+    width: 90px;
+    margin-left: 15px;
+}
+
+.menulist li {
+    list-style-type: none;
+    padding-left: 29px;
+}
+
+#menu {
+    text-align: center;
+}
+
+#menu .menulist {
+    display: inline-flex;
+}
