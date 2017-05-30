@@ -184,8 +184,6 @@ CardDisplay.prototype.CardDisplayObject = {
                 document.getElementById(display).innerHTML += '<img class="cardpics" src="img/cards/king_of_clubs.png" />';
                 break;
             default:
-
-
                 break;
 
         }

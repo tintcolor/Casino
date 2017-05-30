@@ -17,7 +17,7 @@ describe("Deck", function () {
         //spec for sum operation
         it("the return should be an exception", function () {
 
-            expect(oneCard.cards(92)).toThrow("Card doesn't exist anthony");
+            expect(oneCard.cards(92)).toThrow("Card doesn't exist");
         });
     });
     
@@ -34,6 +34,14 @@ describe("Deck", function () {
         it("the return should be the value 11 as an Ace of Hearts", function () {
 
             expect(oneCard.cards(0)).toEqual("Value: 10 Queen of Hearts, Card#: 0");
+        });
+    });
+    
+     describe("when calling the card 14 ", function () {
+        //spec for sum operation
+        it("the return should be the value 11 as an Ace of Diamonds which is card number 14", function () {
+
+            expect(oneCard.cards(14)).toEqual("Value: 11 Ace of Diamonds, Card#: 14");
         });
     });
     

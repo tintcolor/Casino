@@ -50,7 +50,7 @@ class Deck {
                 return "Value: " + oneCard % 13 + " of Clubs, " + "Card#: " + oneCard;
         } else {
             console.log(oneCard);
-            throw "Card doesn't exist anthony";
+            throw "Card doesn't exist";
         }
     }
 

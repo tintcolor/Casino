@@ -17,7 +17,7 @@ Player.prototype.PlayerObject = {
         }
         return hand;
     },
-    score: function () { //tells score
+    score: function () { 
         hand = this.cards();
         // display.innerHTML = "My Cards: "+hand;
         blackjackScore = BlackJackGame.prototype.BlackJackObject.score(hand);
