@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    
+<!--    This is a BlackJack Game, for test units, please go to and run Jasmine/SpecRunner.html-->
+
+<head>
+    <title>Anthony's Blackjack Game</title>
+    <link rel="stylesheet" href="foundation/css/foundation.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="text/javascript" href="foundation/js/app.js">
+    <link rel="text/javascript" href="foundation/js/vendor/foundation.js">
+</head>
+
+
+<body>
+    <section>
+
+        <section id="moneypot">
+            <div id="moneypot">Current Winnings:$</div>
+        </section>
+
+        <section id="dealerPoints">
+            <span id="dealersScoreDisplay">Dealer's Score: </span>
+        </section>
+        <section id="dealerscards">
+            <div class="dealers_cards" id="dealersCardDisplay"></div>
+            <div id="dealercardback"> <img style="height:8.6em; margin-left: 15px;" src="img/cards/back.jpg"><img style="height:8.6em;margin-left: 15px;" src="img/cards/back.jpg"></div>
+            <div class="dealerCardsTitle">Dealer's Cards </div>
+        </section>
+        <hr>
+
+        <section id="currentscore">
+            <span id="score">Current Score: </span>
+        </section>
+        <section id="mycards">
+            <div class="my_cards" id="display"></div>
+            <div id="mycardback"> <img style="height:8.6em; margin-left: 15px;" src="img/cards/back.jpg"><img style="height:8.6em;margin-left: 15px;" src="img/cards/back.jpg"></div>
+            <div class="myCardsTitle">My Cards </div>
+        </section>
+
+        <section id="status">
+            <div id="status"></div>
+        </section>
+
+        <section id="bet_size">
+            <div id="bet_size">Bet:<input type="number" size="6" id="bet" value="10"> </div>
+        </section>
+
+        <section id="menu">
+            <ul class="menulist">
+
+
+                <li><button type="button" id="start-blackjack" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.startGame()">Play Blackjack</button></li>
+
+                <li><button type="button" id="hit-blackjack" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.hit()">Hit</button></li>
+
+                <li><button type="button" id="stand-blackjack" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.stand()">Stand</button></li>
+
+                <li><button type="button" id="new-blackjack-game" class="btn btn-primary" onclick="BlackJackGame.prototype.BlackJackObject.resetGame()">New Game</button></li>
+
+
+            </ul>
+        </section>
+
+    </section>
+
+
+    <script src="Jasmine/src/cardDisplay.js"></script>
+    <script src="Jasmine/src/Dealer.js"></script>
+    <script src="Jasmine/src/Deck.js"></script>
+    <script src="Jasmine/src/Blackjack.js"></script>
+    <script src="Jasmine/src/Player.js"></script>
+    <script src="Jasmine/src/Money.js"></script>
+
+
+
+</body>
+
+</html>
